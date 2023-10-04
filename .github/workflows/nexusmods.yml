@@ -16,22 +16,14 @@ jobs:
     - name: Download the release asset
       run: wget "https://github.com/0xDezzy/Unlimited-Outposts-CCR/archive/refs/tags/v${GITHUB_REF:11}.zip" -O "release.zip"
 
-    - name: Upload to Nexus Mods
-      uses: greatness7/nexusmods_file_updater@v2
+    - name: Upload
+      uses: hmlendea/nexusmods-update@latest
       with:
-        username: ${{secrets.NEXUS_UPLOADER_USERNAME}}
-        password: ${{secrets.NEXUS_UPLOADER_PASSWORD}}
-        game_domain_name: "starfield"
-        mod_id: "2924"
-        file_name: "Unlimited Outposts"
-        file_version: ${{github.ref_name}}
-        update_version: true
-        file_category: "Main Files"
-        new_existing_version: true
-        original_file: "Unlimited Outposts"
-        remove_old_version: false
+        account_email_address: ${{secrets.NEXUS_UPLOADER_USERNAME}}
+        account_password: ${{secrets.NEXUS_UPLOADER_PASSWORD}}
+        nexus_game_id: "starfield"
+        nexus_mod_id: "2924"
+        mod_file_name: "Unlimited Outposts"
+        mod_version: ${{github.ref_name}}
         file_description: "Changelog: https://github.com/0xDezzy/Unlimited-Outposts-CCR/releases/tag/${{github.ref_name}}"
-        remove_nmm_button: false
-        set_as_main_nmm: true
-        requirements_pop_up: true
         file_path: "release.zip"
