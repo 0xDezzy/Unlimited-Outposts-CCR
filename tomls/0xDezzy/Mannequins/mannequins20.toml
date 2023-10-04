@@ -1,5 +1,3 @@
 [[Event]]                      
-    EventType = "OnMenuOpenCloseEvent"
-    asMenuName = "WorkshopMenu"
-    abOpening = true
+    EventType = "DataLoaded"
     Commands = ["set 003F4AEE to 20"]
