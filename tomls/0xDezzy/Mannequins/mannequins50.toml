@@ -2,4 +2,4 @@
     EventType = "OnMenuOpenCloseEvent"
     asMenuName = "WorkshopMenu"
     abOpening = true
-    Commands = ["player.setav OutpostMaxDeployed 10000"]
+    Commands = ["set 003F4AEE to 50"]

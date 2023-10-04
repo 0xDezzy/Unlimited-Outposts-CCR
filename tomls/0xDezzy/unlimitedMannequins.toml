@@ -1,3 +1,0 @@
-[[Event]]                      
-    EventType = "DataLoaded"
-    Commands = ["set 003F4AEE to 100"]
